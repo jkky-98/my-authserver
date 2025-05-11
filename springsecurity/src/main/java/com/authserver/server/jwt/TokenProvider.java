@@ -93,7 +93,7 @@ public class TokenProvider {
         } catch (ExpiredJwtException e) {
             log.error("[TokenProvider][validate] {} Access token is expired", type);
         } catch (JwtException | IllegalArgumentException e) {
-            log.error("[TokenProvider][validate]{} Access token invalid", type);
+            log.error("[TokenProvider][validate] {} Access token invalid", type);
         }
         return false;
     }

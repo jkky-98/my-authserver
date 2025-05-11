@@ -73,6 +73,8 @@ public class CredentialsService {
 
         refreshTokenRepository.save(newToken);
 
+        log.info("[CredentialsService][login] Credential Login Success | Member Email : {}", member.getEmail());
+
         return new CredentialsLoginResponse(accessToken, refreshToken);
     }
 
@@ -99,6 +101,8 @@ public class CredentialsService {
 
         memberRepository.save(member);
         credentialsUserConnectionRepository.save(cre);
+
+        log.info("[CredentialsService][save] Credential Save Success | Member Email : {}", member.getEmail());
     }
 
     private static void validSameCheckPasswordAndConfirmPassword(CredentialsSignUpRequest request) {
